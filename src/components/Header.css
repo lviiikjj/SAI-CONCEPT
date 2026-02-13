@@ -1,0 +1,238 @@
+/* ================= GLOBAL SAFETY ================= */
+
+.header,
+.nav,
+.topbar {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(14px, 4vw, 28px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.topbar a {
+  color: var(--pr);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-weight: 500;
+  font-size: clamp(12px, 1vw, 14px);
+
+  transition: color var(--t);
+}
+
+.topbar a:hover {
+  color: #ffb347;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  background: var(--wh);
+  border-bottom: 1px solid var(--bd);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  padding: 0 clamp(16px, 4vw, 32px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: clamp(60px, 6vw, 76px);
+
+  gap: clamp(10px, 2vw, 24px);
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1vw, 12px);
+
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: clamp(30px, 3vw, 46px);
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo-text {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--dk);
+}
+
+.logo-sub {
+  font-size: clamp(8px, 0.7vw, 11px);
+  color: var(--txm);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ================= PHONE ================= */
+
+.header-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--dk);
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: clamp(12px, 1vw, 15px);
+
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ================= MOBILE TOGGLE ================= */
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+
+  color: var(--dk);
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* ================= NAV ================= */
+
+.nav {
+  background: var(--ac);
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  padding: 0 clamp(10px, 3vw, 24px);
+
+  display: flex;
+  align-items: center;
+
+  gap: clamp(6px, 1vw, 12px);
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= NAV ITEMS ================= */
+
+.nav-item {
+  padding: clamp(10px, 1.2vw, 16px) clamp(14px, 2vw, 24px);
+
+  color: white;
+  font-size: clamp(12px, 1vw, 15px);
+  font-weight: 500;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: background var(--t);
+  text-decoration: none;
+
+  position: relative;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+
+  height: 3px;
+  background: var(--pr);
+  border-radius: 3px 3px 0 0;
+}
+
+.nav-home {
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+  .header-phone {
+    display: none;
+  }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .topbar {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .header-inner {
+    height: clamp(56px, 12vw, 64px);
+  }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 420px) {
+
+  .logo-text {
+    display: none;
+  }
+
+}
