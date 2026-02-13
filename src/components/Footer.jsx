@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
           <div className="footer-contact">
             
-            GSTUIN :- SAYIUGSAB
+            GSTUIN :- 20ABEPN3578P1ZA
           </div>
         </div>
       </div>
